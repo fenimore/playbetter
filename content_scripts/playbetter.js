@@ -1,4 +1,5 @@
 var wrap = document.getElementById('wrap');
+var output = document.getElementById('output');
 var textEdit = document.getElementById('code');
 
 console.log(CodeMirror);
@@ -11,10 +12,14 @@ var mirror = CodeMirror(wrap, {
 
 document.getElementById('run').onclick = function() {
     console.log("clicked");
-    textEdit.innerHTML = "package main";
 };
 
-mirror.focus();
+
+//var div = document.createElement('div');
+//div.id = 'editor';
+//div.innerHTML = 'what';
+//document.body.insertBefore(div, output);
+
 
 
 //var myCodeMirror = CodeMirror.fromTextArea(textEdit,
