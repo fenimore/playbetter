@@ -1,0 +1,19 @@
+{
+
+    "manifest_version": 2,
+    "name": "playbetter",
+    "version": "1.0",
+
+    "description": "Adds syntax highlighting to go playground.",
+
+    "content_scripts": [
+        {
+            "matches": ["*://play.golang.org/*"],
+            "js": ["scripts/playbetter.js",
+                   "lib/codemirror.js",
+                   "mode/go/go.js"],
+            "css": ["lib/codemirror.js"]
+        }
+    ]
+
+}
