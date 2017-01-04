@@ -1,16 +1,22 @@
-document.getElementById('run').onclick = function() {
-    console.log("clicked");
-};
-
-
 var wrap = document.getElementById('wrap');
 var textEdit = document.getElementById('code');
 
 console.log(CodeMirror);
 
 var mirror = CodeMirror(wrap, {
-    value: "func main() {fmt.Println()\n};",
-    mode:  "go"
+    value: "func main() {\nfmt.Println()\n};",
+    mode:  "go",
+    lineNumber: true
 });
 
-//var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('code'));
+document.getElementById('run').onclick = function() {
+    console.log("clicked");
+    textEdit.innerHTML = "package main";
+};
+
+mirror.focus();
+
+
+//var myCodeMirror = CodeMirror.fromTextArea(textEdit,
+//                                           {lineNumbers: true,
+//                                            mode: "go"});

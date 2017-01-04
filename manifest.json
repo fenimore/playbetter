@@ -13,9 +13,10 @@
     "content_scripts": [
         {
             "matches": ["*://play.golang.org/*"],
-            "js": ["content_scripts/codemirror.js",
-                   "content_scripts/go/go.js",
-                   "content_scripts/playbetter.js"],
+            "js": [
+                "content_scripts/go/go.js",
+                "content_scripts/codemirror.js",
+                "content_scripts/playbetter.js"],
             "css": ["style/codemirror.js"]
         }
     ]
