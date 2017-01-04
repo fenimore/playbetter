@@ -6,13 +6,17 @@
 
     "description": "Adds syntax highlighting to go playground.",
 
+    "permissions": [
+        "activeTab"
+    ],
+
     "content_scripts": [
         {
             "matches": ["*://play.golang.org/*"],
-            "js": ["scripts/playbetter.js",
-                   "lib/codemirror.js",
-                   "mode/go/go.js"],
-            "css": ["lib/codemirror.js"]
+            "js": ["content_scripts/codemirror.js",
+                   "content_scripts/go/go.js",
+                   "content_scripts/playbetter.js"],
+            "css": ["style/codemirror.js"]
         }
     ]
 
