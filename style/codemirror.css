@@ -1,3 +1,8 @@
+/* FONT SIZE TWEAKS */
+body {
+    font-size: 11pt;
+}
+
 /* BASICS */
 
 .CodeMirror {
