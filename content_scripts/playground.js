@@ -302,7 +302,7 @@ function PlaygroundOutput(el) {
       return $(opts.codeEl).val();
     }
     function setBody(text) {
-      $(opts.codeEl).val(text);
+        $(opts.codeEl).val(text).change();
     }
     function origin(href) {
       return (""+href).split("/").slice(0, 3).join("/");

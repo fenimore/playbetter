@@ -42,28 +42,38 @@ console.log(mirror.options);
 // submit it for formatting
 // and reset the value of mirror
 fmtBtn.onclick = function () {
-    console.log("formatting now");
+    //console.log("formatting now");
     mirror.save();
     originalFmt.click();
     // FIXME: this dopesn't work because of ajax
+    //mirror.setValue(textEdit.value);
+};
+
+document.getElementById('code').onchange = function() {
+    console.log("changing");
     mirror.setValue(textEdit.value);
 };
+
+
 
 runBtn.onclick = function () {
     mirror.save();
     originalRun.click();
 };
 
+var actualCode = `
+  $(document).ajaxComplete(function(event, jqxhr, options) {
+    if(options.url === "/fmt") {
+      console.log("fmtted");
+      console.log($('#code').html());
+      document.getElementById('code').onchange();
+      //$('#code').change();
+    }
+  });
 
-playground({
-    'editor':       mirror,
-    'codeEl':       '#code',
-    'outputEl':     '#output',
-    'runEl':        '#run',
-    'fmtEl':        '#fmt',
-    'fmtImportEl':  '#imports',
-    'shareEl':      '#share',
-    'shareURLEl':   '#shareURL',
-    'autosave':      true,
-    'enableHistory': true
-});
+`;
+
+var script = document.createElement('script');
+script.textContent = actualCode;
+document.head.appendChild(script);
+script.remove();
