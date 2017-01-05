@@ -7,6 +7,9 @@ TODO list:
 - [ ] fix format button
 - [x] fix go-mode indentations
 - [x] fix keybind breaking behavoir
+- [ ] fix about toggle
+- [ ] add keymap modes
+- [ ] add theme modes
 
 ----
 

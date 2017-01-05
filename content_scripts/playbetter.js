@@ -26,6 +26,10 @@ originalFmt.style.display = 'none';
 controls.insertBefore(runBtn, controls.firstChild);
 originalRun.style.display = 'none';
 
+textEdit.onchange = function () {
+    console.log("test");
+}
+
 // Create CodeMirror from the textarea provided
 var mirror = CodeMirror.fromTextArea(textEdit, {
     mode:  "go",
@@ -37,7 +41,6 @@ var mirror = CodeMirror.fromTextArea(textEdit, {
 });
 
 console.log(mirror.options);
-console.log(Object.keys(mirror));
 
 // save the new content to the textarea,
 // submit it for formatting
