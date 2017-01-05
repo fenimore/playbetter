@@ -18,6 +18,7 @@
                 "mode/go/go.js",
                 "mode/emacs.js",
                 "mode/vim.js",
+                "content_scripts/playground.js",
                 "content_scripts/playbetter.js"],
             "css": ["style/codemirror.css"]
         }

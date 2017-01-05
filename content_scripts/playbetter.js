@@ -26,10 +26,6 @@ originalFmt.style.display = 'none';
 controls.insertBefore(runBtn, controls.firstChild);
 originalRun.style.display = 'none';
 
-textEdit.onchange = function () {
-    console.log("test");
-}
-
 // Create CodeMirror from the textarea provided
 var mirror = CodeMirror.fromTextArea(textEdit, {
     mode:  "go",
@@ -57,3 +53,17 @@ runBtn.onclick = function () {
     mirror.save();
     originalRun.click();
 };
+
+
+playground({
+    'editor':       mirror,
+    'codeEl':       '#code',
+    'outputEl':     '#output',
+    'runEl':        '#run',
+    'fmtEl':        '#fmt',
+    'fmtImportEl':  '#imports',
+    'shareEl':      '#share',
+    'shareURLEl':   '#shareURL',
+    'autosave':      true,
+    'enableHistory': true
+});
