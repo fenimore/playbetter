@@ -17,6 +17,7 @@ fmtBtn.setAttribute('type', 'button');
 fmtBtn.setAttribute('value', 'Format');
 fmtBtn.setAttribute('id', 'fmt-btn');
 
+
 // Clean up editor
 document.getElementsByClassName('lines')[0].style.display = 'none';
 wrap.style.background = 'none';
@@ -36,17 +37,12 @@ var mirror = CodeMirror.fromTextArea(textEdit, {
     lineNumbers: true
 });
 
-console.log(mirror.options);
-
 // save the new content to the textarea,
 // submit it for formatting
 // and reset the value of mirror
 fmtBtn.onclick = function () {
-    //console.log("formatting now");
     mirror.save();
     originalFmt.click();
-    // FIXME: this dopesn't work because of ajax
-    //mirror.setValue(textEdit.value);
 };
 
 document.getElementById('code').onchange = function() {
@@ -54,28 +50,26 @@ document.getElementById('code').onchange = function() {
     mirror.setValue(textEdit.value);
 };
 
-
-
 runBtn.onclick = function () {
+    console.log("Click");
     mirror.save();
     originalRun.click();
 };
 
+originalRun.onclick = function() {
+    console.log("Clickkekd");
+};
 
-var injection =`
-console.log('injection!!!');
-$(document).ajaxComplete(function(event, jqxhr, options) {
-  if(options.url === "/fmt") {
-    console.log("fmtted");
-    console.log($('#code').html());
-    document.getElementById('code').onchange();
-    //$('#code').change();
-  }
-});
+var injection = `
+  $(document).ajaxComplete(function(event, jqxhr, options) {
+    if(options.url === "/fmt") {
+      $('#run').click();
+    }
+  });
+
 `;
 
-
-var executing = browser.tabs.executeScript({
-    code: 'alert("whatwhat");'
-});
-executing.then(onExecuted, onError);
+var script = document.createElement('script');
+script.textContent = injection;
+document.head.appendChild(script);
+script.remove();
