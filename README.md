@@ -5,7 +5,7 @@ There is a super slick chrome extension which does way more than this, but alas,
 TODO list:
 
 - [ ] fix format button
-- [ ] fix go-mode indentations
+- [x] fix go-mode indentations
 - [ ] fix keybind breaking behavoir
 
 ----

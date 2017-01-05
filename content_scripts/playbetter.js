@@ -21,7 +21,6 @@ fmtBtn.setAttribute('id', 'fmt-btn');
 document.getElementsByClassName('lines')[0].style.display = 'none';
 wrap.style.background = 'none';
 // Fill new controls
-//controls.appendChild(runBtn);
 controls.insertBefore(fmtBtn, controls.firstChild);
 originalFmt.style.display = 'none';
 controls.insertBefore(runBtn, controls.firstChild);
@@ -30,8 +29,14 @@ originalRun.style.display = 'none';
 // Create CodeMirror from the textarea provided
 var mirror = CodeMirror.fromTextArea(textEdit, {
     mode:  "go",
+    autofocus: true,
+    indentUnit: 4,
+    indentWithTabs: true,
     lineNumbers: true
 });
+
+console.log(mirror.options);
+console.log(Object.keys(mirror));
 
 // save the new content to the textarea,
 // submit it for formatting
