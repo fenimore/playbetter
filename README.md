@@ -6,7 +6,7 @@ TODO list:
 
 - [ ] fix format button
 - [x] fix go-mode indentations
-- [ ] fix keybind breaking behavoir
+- [x] fix keybind breaking behavoir
 
 ----
 

@@ -32,6 +32,7 @@ var mirror = CodeMirror.fromTextArea(textEdit, {
     autofocus: true,
     indentUnit: 4,
     indentWithTabs: true,
+    keyMap: "emacs",
     lineNumbers: true
 });
 
