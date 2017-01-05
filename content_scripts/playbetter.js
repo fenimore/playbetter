@@ -61,19 +61,21 @@ runBtn.onclick = function () {
     originalRun.click();
 };
 
-var actualCode = `
-  $(document).ajaxComplete(function(event, jqxhr, options) {
-    if(options.url === "/fmt") {
-      console.log("fmtted");
-      console.log($('#code').html());
-      document.getElementById('code').onchange();
-      //$('#code').change();
-    }
-  });
 
+var injection =`
+console.log('injection!!!');
+$(document).ajaxComplete(function(event, jqxhr, options) {
+  if(options.url === "/fmt") {
+    console.log("fmtted");
+    console.log($('#code').html());
+    document.getElementById('code').onchange();
+    //$('#code').change();
+  }
+});
 `;
 
-var script = document.createElement('script');
-script.textContent = actualCode;
-document.head.appendChild(script);
-script.remove();
+
+var executing = browser.tabs.executeScript({
+    code: 'alert("whatwhat");'
+});
+executing.then(onExecuted, onError);
