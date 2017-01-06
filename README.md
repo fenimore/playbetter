@@ -4,12 +4,14 @@ There is a super slick chrome extension which does way more than this, but alas,
 
 TODO list:
 
-- [ ] fix format button
+- [x] fix format button
 - [x] fix go-mode indentations
 - [x] fix keybind breaking behavoir
 - [ ] fix about toggle
 - [ ] add keymap modes
 - [ ] add theme modes
+- [ ] add shortcut keys for run and format
+- [ ] automatically select imports
 
 ----
 
