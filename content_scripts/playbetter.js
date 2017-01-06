@@ -37,8 +37,8 @@
         mode:  "go",
         autofocus: true,
         indentUnit: 4,
-        indentWithTabs: true,
-        keyMap: "emacs",
+        //indentWithTabs: true,
+        keyMap: "emacs", // FIXME: set in localstorage
         lineNumbers: true
     });
 
@@ -54,7 +54,7 @@
         // http://stackoverflow.com/questions/41489480/listen-in-content-script-for-when-ajax-response-changes-textarea-val
         setTimeout(function(){
             mirror.setValue(textEdit.value);
-        }, 500);
+        }, 200); // TODO: set slider on page?
     };
 
     about.onclick = function () {
