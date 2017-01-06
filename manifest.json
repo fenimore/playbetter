@@ -1,5 +1,4 @@
 {
-
     "manifest_version": 2,
     "name": "playbetter",
     "version": "1.0",
@@ -10,10 +9,6 @@
         "activeTab"
     ],
 
-    "background": {
-        "scripts": ["background.js"]
-    },
-
     "content_scripts": [
         {
             "matches": ["*://play.golang.org/*"],
@@ -22,10 +17,8 @@
                 "mode/go/go.js",
                 "mode/emacs.js",
                 "mode/vim.js",
-                "content_scripts/playground.js",
                 "content_scripts/playbetter.js"],
             "css": ["style/codemirror.css"]
         }
     ]
-
 }
