@@ -7,9 +7,10 @@ TODO list:
 - [x] fix format button
 - [x] fix go-mode indentations
 - [x] fix keybind breaking behavoir
+- [ ] fancify theme
 - [ ] fix about toggle
 - [ ] add keymap modes
-- [ ] add theme modes
+- [ ] add theme modes (v2)
 - [ ] add shortcut keys for run and format
 - [ ] automatically select imports
 
