@@ -17,7 +17,6 @@ fmtBtn.setAttribute('type', 'button');
 fmtBtn.setAttribute('value', 'Format');
 fmtBtn.setAttribute('id', 'fmt-btn');
 
-
 // Clean up editor
 document.getElementsByClassName('lines')[0].style.display = 'none';
 wrap.style.background = 'none';
@@ -43,33 +42,18 @@ var mirror = CodeMirror.fromTextArea(textEdit, {
 fmtBtn.onclick = function () {
     mirror.save();
     originalFmt.click();
+    // NOTE: this fmt depends on an ajax call resetting the textarea
+    // this is kind of the only solution, I tried code injection:
+    // see my stackoverflow question:
+    // http://stackoverflow.com/questions/41489480/listen-in-content-script-for-when-ajax-response-changes-textarea-val
+    setTimeout(function(){
+        mirror.setValue(textEdit.value);
+    }, 500);
 };
 
-document.getElementById('code').onchange = function() {
-    console.log("changing");
-    mirror.setValue(textEdit.value);
-};
-
+// click the run button wrapper
 runBtn.onclick = function () {
     console.log("Click");
     mirror.save();
     originalRun.click();
 };
-
-originalRun.onclick = function() {
-    console.log("Clickkekd");
-};
-
-var injection = `
-  $(document).ajaxComplete(function(event, jqxhr, options) {
-    if(options.url === "/fmt") {
-      $('#run').click();
-    }
-  });
-
-`;
-
-var script = document.createElement('script');
-script.textContent = injection;
-document.head.appendChild(script);
-script.remove();
