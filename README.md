@@ -4,7 +4,7 @@ There is a super slick chrome extension which does way more than this, it's call
 
 This plugin is tailored for, well, me:
 
-1. I use emacs keybindings. However, because firefox doesn't let me interrupt `Ctrl-N`, I use `Alt-N` for moving down a line instead.
+1. I use emacs keybindings. However, because firefox doesn't let me interrupt `Ctrl-N`, I use `Alt-N` for moving down a line instead. (and `Alt-P` for up whynot)
 2. The About screen is broken. I could fix it. But I know what it says.
 3. There is really only syntax highlighting for added functionality. Yup.
 

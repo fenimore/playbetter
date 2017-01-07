@@ -310,7 +310,7 @@
     "Alt-D": function(cm) { killTo(cm, byWord, 1); },
     "Alt-Backspace": function(cm) { killTo(cm, byWord, -1); },
 
-    "Alt-N": move(byLine, 1),
+    "Alt-N": move(byLine, 1), "Alt-P": move(byLine, -1),
     "Ctrl-N": move(byLine, 1), "Ctrl-P": move(byLine, -1),
     "Down": move(byLine, 1), "Up": move(byLine, -1),
     "Ctrl-A": "goLineStart", "Ctrl-E": "goLineEnd",
