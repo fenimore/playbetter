@@ -14,10 +14,8 @@
             "matches": ["*://play.golang.org/*"],
             "js": [
                 "lib/codemirror.js",
-                "addon/edit/matchbrackets.js",
                 "mode/go/go.js",
                 "mode/emacs.js",
-                "mode/vim.js",
                 "content_scripts/playbetter.js"],
             "css": ["style/codemirror.css"]
         }
