@@ -310,12 +310,13 @@
     "Alt-D": function(cm) { killTo(cm, byWord, 1); },
     "Alt-Backspace": function(cm) { killTo(cm, byWord, -1); },
 
+    "Alt-N": move(byLine, 1),
     "Ctrl-N": move(byLine, 1), "Ctrl-P": move(byLine, -1),
     "Down": move(byLine, 1), "Up": move(byLine, -1),
     "Ctrl-A": "goLineStart", "Ctrl-E": "goLineEnd",
     "End": "goLineEnd", "Home": "goLineStart",
 
-    "Alt-V": move(byPage, -1), "Ctrl-V": move(byPage, 1),
+    "Alt-V": move(byPage, -1), //"Ctrl-V": move(byPage, 1),
     "PageUp": move(byPage, -1), "PageDown": move(byPage, 1),
 
     "Ctrl-Up": move(byParagraph, -1), "Ctrl-Down": move(byParagraph, 1),
